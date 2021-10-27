@@ -33,9 +33,9 @@ const MessageList: React.FC = () => {
   useEffect(() => {
     async function getMessages (): Promise<void> {
       try {
-        const res = await api.get<{ data: IMessage[] }>('/last/messages')
+        const res = await api.get<IMessage[]>('/last/messages')
 
-        setMessages(res.data.data)
+        setMessages(res.data)
       } catch (error) {}
     }
 
